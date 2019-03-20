@@ -1,0 +1,27 @@
+{
+  "name": "web-app-from-scratch-18-19",
+  "version": "1.0.0",
+  "description": "web-app-from-scratch",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon ./server/js/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chelseadoeleman/web-app-from-scratch-18-19.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.2.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "helmet": "^3.16.0",
+    "node-fetch": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}

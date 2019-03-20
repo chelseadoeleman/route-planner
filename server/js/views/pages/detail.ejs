@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../components/head %>
+</head>
+<body>
+    <main>
+        <h1>
+            <a href="/">Web App From Scratch</a>
+        </h1>
+        <section>
+                <ul>
+                    <li class="detail-image-wrapper">
+                        <img 
+                            class="head-image" 
+                            src="<%= details.urls.regular %>" 
+                            alt="image"
+                        >
+                    </li>
+                    <li class="detail-image-wrapper">
+                        <img 
+                            class="user"
+                            src="<%= details.user && details.user['profile_image'] && details.user['profile_image'].large %>" 
+                            alt="user"
+                        >
+                    </li>
+                    <li>
+                         Username: <%= details.user.name %>
+                    </li>
+                    <li>
+                         Width: <%= details.width %>
+                    </li>
+                    <li>
+                         Height: <%= details.height %>
+                    </li>
+                    <li>
+                         Likes: <%= details.likes %>
+                    </li>
+                </ul>
+        </section>
+    </main>
+</body>
+</html>
