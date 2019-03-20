@@ -43,14 +43,20 @@ body {
     background-color: rgb(27, 27, 27);
 }
 
+main {
+    margin: 1em;
+}
+
 input {
     background-color: rgb(59, 59, 59);
     border-style: none;
     margin: 1em;
+    padding: .5em;
 }
 
 button {
-    background-color: rgb(255, 101, 101);
+    background-image: linear-gradient(150deg, rgb(76, 199, 236) 1%, rgb(174, 75, 212) 50%);
     border-style: none;
-    margin: 1em;
+    margin: 1em 0;
+    padding: .5em;
 }
