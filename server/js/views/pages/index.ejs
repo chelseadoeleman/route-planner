@@ -8,30 +8,22 @@
 <body>
     <main>
         <h1>
-            Web App From Scratch
+            Find my route to the Device Lab
         </h1>
-        <input type="text" class="searchBox" />
-        <section>
-            <div class="photos">
-                <% images.forEach(function(image) { %>
-                    <div class="image-wrapper">
-                        <img 
-                            class="image" 
-                            src="<%= image.urls && image.urls.regular %>" 
-                            data-location="<%= image.user && image.user.location %>"
-                            style="background-color: <%= image.color %>;"
-                            alt="image">
-                        <a href="/detail/<%= image.id %>">More about this picture</a>
-                    </div>
-                <% }) %>
-            </div>
-            <div id="map" style="min-width: 40vw; max-height: 90vh; margin-top: 2em; margin-right: 2em; position: relative;"></div>
-        </section>
+        <button>
+            Go from my current location
+        </button>
+        <form>
+            From
+            <input type="text">
+            <button>
+                Start my route
+            </button>
+        </form>
     </main>
 
     <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v3.1.0/mapbox-gl-geocoder.min.js'></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
     <script src="js/mapbox.js"></script>
-    <script src="js/script.js"></script>
 </body>
 </html>
