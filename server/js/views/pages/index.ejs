@@ -8,13 +8,16 @@
         <h1>
             Find my route to the Device Lab
         </h1>
-        <button>
+        <a href="/transport">
+            Start from home
+        </a>
+        <a href="/transport">
             Go from my current location
-        </button>
-        <form>
-            From
-            <input type="text">
-            <button>
+        </a>
+        <form name="from" action="/#" method="POST">
+            <label for="from">From</label>
+            <input type="text" id="from">
+            <button type="submit">
                 Start my route
             </button>
         </form>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' type='text/css' />
+    <% include ../components/head %>
+</head>
+<body>
+    <main>
+        <section>
+            <div id="map" style="min-width: 40vw; max-height: 90vh; margin-top: 2em; margin-right: 2em; position: relative;"></div>
+            <h1>Start</h1>
+            <ul>
+                <li>Go to the right on Laan van Loevenstein</li>
+            </ul>
+            <a href="/step1">Step 1</a>
+        </section>
+        <ul>
+            <li>
+                <a href="/start" class="current">Start</a>
+            </li>
+            <li>
+                <a href="/step1">•</a>
+            </li>
+            <li>
+                <a href="/step2">•</a>
+            </li>
+            <li>
+                <a href="/finish">Finish</a>
+            </li>
+        </ul>
+    </main>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
+    <script src="js/mapbox.js"></script>
+</body>
+</html>

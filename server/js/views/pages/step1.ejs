@@ -5,13 +5,25 @@
 </head>
 <body>
     <main>
-       <form action="/step2" method="POST">
-           <dl>
-               <dt>Step 1</dt>
-               <dd>Go to the right on Laan van Loevestein</dd>
-           </dl>
-           <button>Step 2</button>
-       </form>
+        <dl>
+            <dt>Step 1</dt>
+            <dd>Follow the A4 till Amsterdam</dd>
+        </dl>
+        <a href="/step2">Step 2</a>
+        <ul>
+            <li>
+                <a href="/start" class="completed">Start</a>
+            </li>
+            <li>
+                <a href="/step1" class="current">•</a>
+            </li>
+            <li>
+                <a href="/step2">•</a>
+            </li>
+            <li>
+                <a href="/finish">Finish</a>
+            </li>
+        </ul>
     </main>
 </body>
 </html>

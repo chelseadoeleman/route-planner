@@ -6,7 +6,8 @@ const path = require('path')
 const bodyParser = require('body-parser')
 const { 
     handleIndexRoute, 
-    handleTransportRoute, 
+    handleTransportRoute,
+    handleStartRoute, 
     handleStep1Route,
     handleStep2Route,
     handleFinishRoute} = require('./routes/routes')
@@ -21,6 +22,7 @@ app.set('views', `${__dirname}/views`)
 
 app.get('/', handleIndexRoute)
 app.get('/transport', handleTransportRoute)
+app.get('/start', handleStartRoute)
 app.get('/step1', handleStep1Route)
 app.get('/step2', handleStep2Route)
 app.get('/finish', handleFinishRoute)
