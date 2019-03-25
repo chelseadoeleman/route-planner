@@ -8,24 +8,20 @@
         <% if(json) { %>
             <section>
                 <h1>Start</h1>
-                <ul>
-                    <li><%= json.start.direction %></li>
-                    <li><%= json.start.min %></li>
-                </ul>
+                <p>Leave your home and go on a adventure</p>
                 <a href="<%= nextRoute %>">Step 1</a>
             </section>
             <ul>
                 <li>
                     <a href="/start" class="current">Start</a>
                 </li>
+                <% json.steps.forEach(function (step, i) { %>
+                    <li>
+                        <a href="<%= nextRoute %>#<%= i + 1 %>" class="current"><%= i + 1 %></a>
+                    </li>
+                <% }) %>
                 <li>
-                    <a href="/step1">•</a>
-                </li>
-                <li>
-                    <a href="/step2">•</a>
-                </li>
-                <li>
-                    <a href="/finish">Finish</a>
+                    <a href="<%= finishRoute %>">Finish</a>
                 </li>
             </ul>
         <% } %>

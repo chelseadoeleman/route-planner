@@ -8,10 +8,10 @@ const {
     handleIndexRoute, 
     handleTransportRoute,
     handleStartRoute, 
-    handleStep1Route,
-    handleStep2Route,
+    handleGoRoute,
     handleFinishRoute,
-    transport} = require('./routes/routes')
+    transport
+    } = require('./routes/routes')
 const app = express()
 
 app.use(helmet())
@@ -24,8 +24,7 @@ app.set('views', `${__dirname}/views`)
 app.get('/', handleIndexRoute)
 app.get('/transport', handleTransportRoute)
 app.get('/start', handleStartRoute)
-app.get('/step1', handleStep1Route)
-app.get('/step2', handleStep2Route)
+app.get('/go', handleGoRoute)
 app.get('/finish', handleFinishRoute)
 
 app.post('/start/:transportType', transport)

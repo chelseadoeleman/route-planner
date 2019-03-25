@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../components/head %>
+</head>
+<body>
+    <main>
+        <% if(json) { %>
+            <h1>Go</h1>
+            <% json.steps.forEach(function (step, i) { %>
+                <section>
+                    <h2 id="<%= i + 1 %>">Step <%= i + 1 %></h2>
+                    <ul>
+                        <li><%= step.direction %></li>
+                        <li><%= step.distance %></li>
+                    </ul>
+                </section>
+            <% }) %>
+            <a href="<%= nextRoute %>">Finish</a>
+            <ul>
+                <li>
+                    <a href="/start">Start</a>
+                </li>
+                <% json.steps.forEach(function (step, i) { %>
+                <li>
+                    <a href="#<%= i + 1 %>" class="current"><%= i + 1 %></a>
+                </li>
+                <% }) %>
+                <li>
+                    <a href="<%= nextRoute %>">Finish</a>
+                </li>
+            </ul>
+        <% } %>
+    </main>
+</body>
+</html>

@@ -1,14 +1,80 @@
 {
-    "start": {
-        "direction": "Go to the right at Laagveld to Ijweg",
-        "min": "2 min"
-    },
-    "step-1": {
-        "direction": "Follow the A4 till Amsterdam",
-        "min": "25 min"
-    },
-    "step-2": {
-        "direction": "Go to Wibautstraat 2,4 Theo Thijssen Huis HvA",
-        "min": "5 min"
-    }
+    "steps": [
+        {
+            "direction": "Head north on Leusveld toward Stepelerveld",
+            "distance": "220 m"
+        },
+        {
+            "direction": "Leusveld turns left and becomes Laagveld",
+            "distance": "200 m"
+        },
+        {
+            "direction": "Turn right onto Loenerveld",
+            "distance": "120 m"
+        },
+        {
+            "direction": "Turn left onto IJweg",
+            "distance": "650 m"
+        },
+        {
+            "direction": "At the roundabout, take the 2nd exit onto Getsewoudweg",
+            "distance": "850 m"
+        },
+        {
+            "direction": "At the roundabout, take the 1st exit and stay on Getsewoudweg",
+            "distance": "150 m"
+        },
+        {
+            "direction": "Use any lane to turn left onto Leimuiderweg/N207",
+            "distance": "4.7 km"
+        },
+        {
+            "direction": "Use the left 2 lanes to turn left to merge onto A4 toward Amsterdam",
+            "distance": "1.0 km"
+        },
+        {
+            "direction": "Merge onto A4",
+            "distance": "16.2 km"
+        },
+        {
+            "direction": "Keep left to stay on A4",
+            "distance": "1.0 km"
+        },
+        {
+            "direction": "Continue onto A10",
+            "distance": "3.1 km"
+        },
+        {
+            "direction": "Use the right 2 lanes to take exit 9 for s109 toward s110/RAI/Rivierenbuurt/A10",
+            "distance": "400 m"
+        },
+        {
+            "direction": "Keep right at the fork, follow signs for s109 and merge onto Europaboulevard/s109 Take President Kennedylaan and Amsteldijk/s110 to Rhijnspoorplein/Wibautstraat/s112 in Amsterdam-Oost",
+            "distance": "31 m"
+        },
+        {
+            "direction": "Merge onto Europaboulevard/s109",
+            "distance": "700 m"
+        },
+        {
+            "direction": "Use the right 2 lanes to turn right onto President Kennedylaan",
+            "distance": "1.6 km"
+        },
+        {
+            "direction": "Continue onto Amsteldijk/s110",
+            "distance": "1.9 km"
+        },
+        {
+            "direction": "Turn right onto Torontobrug/s100",
+            "distance": "170 m"
+        },
+        {
+            "direction": "Use the right lane to take the s112 ramp to Centrum/Ring/A10",
+            "distance": "190 m"
+        },
+        {
+            "direction": "Turn right onto Rhijnspoorplein/Wibautstraat/s112",
+            "distance": "86 m"
+        }
+    ]
 }

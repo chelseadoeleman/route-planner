@@ -21,55 +21,55 @@ const handleStartRoute = async (request, response) => {
         const json = await JSON.parse(data)
         response.status(200).render('../views/pages/start.ejs', {
             json,
-            nextRoute: `/step1/?transportType=${transportType}`,
+            nextRoute: `/go/?transportType=${transportType}`,
+            finishRoute: `/finish/?transportType=${transportType}`
         })
     } else {
         const data = await readFile(walkingFilePath)
         const json = await JSON.parse(data)
         response.status(200).render('../views/pages/start.ejs', {
             json,
-            nextRoute: `/step1/?transportType=${transportType}`,
+            nextRoute: `/go/?transportType=${transportType}`,
+            finishRoute: `/finish/?transportType=${transportType}`
         })
     }
 }
 
-const handleStep1Route = async (request, response) => {
+const handleGoRoute = async (request, response) => {
     const { transportType } =  request.query
     if (transportType === 'car') {
         const data = await readFile(carFilePath)
         const json = await JSON.parse(data)
-        response.status(200).render('../views/pages/step1.ejs', {
+        response.status(200).render('../views/pages/go.ejs', {
             json,
-            nextRoute: `/step2/?transportType=${transportType}`,
+            nextRoute: `/finish/?transportType=${transportType}`,
         })
     } else {
         const data = await readFile(walkingFilePath)
         const json = await JSON.parse(data)
-        response.status(200).render('../views/pages/step1.ejs', {
+        response.status(200).render('../views/pages/go.ejs', {
             json,
-            nextRoute: `/step2/?transportType=${transportType}`,
+            nextRoute: `/finish/?transportType=${transportType}`,
         })
     }
 }
 
-const handleStep2Route = async (request, response) => {
+
+const handleFinishRoute = async (request, response) => {
     const { transportType } =  request.query
     if (transportType === 'car') {
         const data = await readFile(carFilePath)
         const json = await JSON.parse(data)
-        response.status(200).render('../views/pages/step2.ejs', {
-            json,
+        response.status(200).render('../views/pages/finish.ejs', {
+            json
         })
     } else {
         const data = await readFile(walkingFilePath)
         const json = await JSON.parse(data)
-        response.status(200).render('../views/pages/step2.ejs', {
-            json,
+        response.status(200).render('../views/pages/finish.ejs', {
+            json
         })
     }
-}
-const handleFinishRoute = (request, response) => {
-    response.status(200).render('../views/pages/finish.ejs')
 }
 
 const transport = (request, response) => {
@@ -86,8 +86,7 @@ module.exports = {
     handleIndexRoute,
     handleTransportRoute,
     handleStartRoute,
-    handleStep1Route,
-    handleStep2Route,
+    handleGoRoute,
     handleFinishRoute,
     transport
 }
