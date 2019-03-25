@@ -1,0 +1,14 @@
+{
+    "start": {
+        "direction": "Go to the right at Laagveld to Ijweg",
+        "min": "2 min"
+    },
+    "step-1": {
+        "direction": "Follow the A4 till Amsterdam",
+        "min": "25 min"
+    },
+    "step-2": {
+        "direction": "Go to Wibautstraat 2,4 Theo Thijssen Huis HvA",
+        "min": "5 min"
+    }
+}

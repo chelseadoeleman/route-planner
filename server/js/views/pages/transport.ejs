@@ -8,12 +8,16 @@
         <h1>
             Choose your form of transport
         </h1>
-        <a href="/start">
-            Car
-        </a>
-        <a href="/start">
-            Walking
-        </a>
+        <form action="/start/car" method="POST" enctype="application/x-www-form-urlencoded">
+            <button type="submit">
+                Car
+            </button>
+        </form>
+        <form action="/start/walking" method="POST" enctype="application/x-www-form-urlencoded">
+            <button type="submit">
+                Walking
+            </button>
+        </form>
     </main>
 </body>
 </html>

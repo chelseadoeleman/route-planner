@@ -5,25 +5,28 @@
 </head>
 <body>
     <main>
-        <dl>
-            <dt>Step 1</dt>
-            <dd>Follow the A4 till Amsterdam</dd>
-        </dl>
-        <a href="/step2">Step 2</a>
-        <ul>
-            <li>
-                <a href="/start" class="completed">Start</a>
-            </li>
-            <li>
-                <a href="/step1" class="current">•</a>
-            </li>
-            <li>
-                <a href="/step2">•</a>
-            </li>
-            <li>
-                <a href="/finish">Finish</a>
-            </li>
-        </ul>
+        <% if(json) { %>
+            <h1>Step 1</h1>
+            <ul>
+                <li><%= json["step-1"].direction %></li>
+                <li><%= json["step-1"].min %></li>
+            </ul>
+            <a href="<%= nextRoute %>">Step 2</a>
+            <ul>
+                <li>
+                    <a href="/start" class="completed">Start</a>
+                </li>
+                <li>
+                    <a href="/step1" class="current">•</a>
+                </li>
+                <li>
+                    <a href="/step2">•</a>
+                </li>
+                <li>
+                    <a href="/finish">Finish</a>
+                </li>
+            </ul>
+        <% } %>
     </main>
 </body>
 </html>

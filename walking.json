@@ -1,0 +1,14 @@
+{
+    "start": {
+        "direction": "Go to the right on Laan van Loevenstein",
+        "min": "10 min"
+    },
+    "step-1": {
+        "direction": "Walk 4.7 km along Hoofdweg",
+        "min": "300 min"
+    },
+    "step-2": {
+        "direction": "Go to Wibautstraat 2,4 Theo Thijssen Huis HvA",
+        "min": "15 min"
+    }
+}
