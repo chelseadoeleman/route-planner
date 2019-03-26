@@ -7,13 +7,14 @@
     <main>
         <% if(json) { %>
             <section>
+                <img src="../../../assets/carRoute.png" alt="car route">
                 <h1>Start</h1>
                 <p>Leave your home and go on a adventure</p>
-                <a href="<%= nextRoute %>">Step 1</a>
             </section>
+            <a href="<%= nextRoute %>">Step 1</a>
             <ul>
                 <li>
-                    <a href="/start" class="current">Start</a>
+                    <a href="/start" class="current">Home</a>
                 </li>
                 <% json.steps.forEach(function (step, i) { %>
                     <li>

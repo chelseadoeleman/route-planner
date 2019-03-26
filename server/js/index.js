@@ -10,8 +10,9 @@ const {
     handleStartRoute, 
     handleGoRoute,
     handleFinishRoute,
-    transport
-    } = require('./routes/routes')
+    transport,
+    setLocation
+} = require('./routes/routes')
 const app = express()
 
 app.use(helmet())
@@ -28,7 +29,8 @@ app.get('/go', handleGoRoute)
 app.get('/finish', handleFinishRoute)
 
 app.post('/start/:transportType', transport)
+app.post('/setLocation', setLocation)
 
-app.listen({ port: process.env.PORT || 3000 }), () => {
-    console.log(`listening on port ${process.env.PORT || 3000}`)
+app.listen({ port: process.env.PORT || 4000 }), () => {
+    console.log(`listening on port ${process.env.PORT || 4000}`)
 }   

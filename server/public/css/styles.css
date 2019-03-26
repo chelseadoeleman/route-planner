@@ -46,28 +46,61 @@ body {
     background-image: linear-gradient(130deg, rgb(27, 27, 27) 1%, rgb(15, 15, 15) 50%);
 }
 
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
 main {
     margin: 0 auto;
     min-width: 60%;
     max-width: 75%;
 }
 
-h1 {
+section {
+    text-align: center;
+    font-size: 1em;
     margin: 1em;
+    border-radius: .5em;
+    text-decoration: none;
+    display: block;
+    background-color: rgb(129, 81, 184);
+    background-image: linear-gradient(150deg, rgb(79, 106, 194) 1%,rgb(129, 81, 184) 50%);
+    border-style: none;
+    padding: 3% 0;
+}
+
+img {
+    margin: 0 auto;
+    margin-top: -3.1%;
+    border-radius: .5em;
+    width: 100%;
+}
+
+.steps {
+    display: block;
+}
+h1 {
+    margin: .5em;
     text-align: center;
     font-size: 2em;
 }
 
-dl {
-    margin: 1em;
+p {
+    margin-bottom: 1em;
 }
 
 input {
     background-color: #f4f4f4;
+    color: rgb(67, 0, 145);
+    font-size: .7em;
+    font-weight: 800;
     min-width: 30%;
     margin-left: 1em;
     border-style: none;
-    padding: 1.5em;
+    padding: 1em;
     border-radius: .5em;
 }
 
@@ -84,7 +117,9 @@ a {
 }
 
 form {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.5em;
     border-radius: .2em;
     background-color: rgb(52, 84, 190);
@@ -100,7 +135,7 @@ button {
     background-image: linear-gradient(150deg, rgb(149, 207, 255) 1%, rgb(206, 164, 255) 50%);
     background-color: rgb(149, 207, 255);
     border-style: none;
-    padding: .5em;
+    padding: .65em;
     margin: .5em;
 }
 
