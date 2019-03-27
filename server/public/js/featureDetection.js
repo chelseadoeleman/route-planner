@@ -13,6 +13,21 @@ function getElementsByTagNameExists() {
         && typeof document.body.getElementsByTagName === 'function'
 }
 
+function XMLHttpRequestExists() {
+    return 'XMLHttpRequest' in window
+        && typeof window.XMLHttpRequest === 'function'
+}
+
+function geolocationExists() {
+    return 'geolocation' in navigator
+        && typeof navigator.geolocation === 'object'
+}
+
+function setAttributeExists() {
+    return 'setAttribute' in document.body
+        && typeof document.body.setAttribute === 'function'
+}
+
 function getElementsByClassNameAlternative(className) {
     var matches = []
     var tags = document.getElementsByTagName("*")
@@ -51,5 +66,8 @@ function attachEventListener(target, eventName, callback) {
 }
 
 function canMakeUseOfJavaScript() {
-    return getElementsByTagNameExists()
+    return getElementsByTagNameExists() 
+        && XMLHttpRequestExists()
+        && geolocationExists()
+        && setAttributeExists()
 }

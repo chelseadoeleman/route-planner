@@ -9,19 +9,22 @@
         <% if(json) { %>
             <h1>Go</h1>
             <section class="map-wrapper">
+                <!-- <img src="../../../assets/carRoute.png" alt="car route"> -->
                 <div id="map"></div>
             </section>
-            <% json.steps.forEach(function (step, i) { %>
-                <section>
-                    <h2 id="<%= i + 1 %>">Step <%= i + 1 %></h2>
-                    <ul class="steps">
-                        <li><%= step.direction %></li>
-                        <li><%= step.distance %></li>
-                    </ul>
-                </section>
-            <% }) %>
+            <div class="directions">
+                <% json.steps.forEach(function (step, i) { %>
+                    <section>
+                        <h2 id="<%= i + 1 %>">Step <%= i + 1 %></h2>
+                        <ul class="steps">
+                            <li><%= step.direction %></li>
+                            <li><%= step.distance %></li>
+                        </ul>
+                    </section>
+                <% }) %>
+            </div>
             <a href="<%= nextRoute %>">Finish</a>
-            <ul>
+            <ul class="navigation">
                 <li>
                     <a href="/start">Home</a>
                 </li>
