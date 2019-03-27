@@ -1,32 +1,68 @@
-function querySelectorAllExists() {
+function querySelectorAllSupported() {
     return 'querySelectorAll' in document
         && typeof document.body.querySelectorAll === 'function'
 }
 
-function getElementsByClassNameExists() {
+function getElementsByClassNameSupported() {
     return 'getElementsByClassName' in document
         && typeof document.getElementsByClassName === 'function'
 }
 
-function getElementsByTagNameExists() {
+function getElementsByTagNameSupported() {
     return 'getElementsByTagName' in document.body
         && typeof document.body.getElementsByTagName === 'function'
 }
 
-function XMLHttpRequestExists() {
+function XMLHttpRequestSupported() {
     return 'XMLHttpRequest' in window
         && typeof window.XMLHttpRequest === 'function'
 }
 
-function geolocationExists() {
+function geolocationSupported() {
     return 'geolocation' in navigator
         && typeof navigator.geolocation === 'object'
 }
 
-function setAttributeExists() {
+function setAttributeSupported() {
     return 'setAttribute' in document.body
         && typeof document.body.setAttribute === 'function'
 }
+
+function innerHTMLSupported() {
+    return 'innerHTML' in document.body
+        && typeof document.body.innerHTML === 'string'
+}
+
+function innerTextSupported() {
+    return 'innerText' in document.body
+        && typeof document.body.innerText === 'string'
+}
+
+function indexOfSupported() {
+    return 'indexOf' in Array.prototype
+        && typeof Array.prototype.indexOf === 'function'
+}
+
+function splitSupported() {
+    return 'split' in String.prototype
+        && typeof String.prototype.split === 'function'
+}
+
+function replaceSupported() {
+    return 'replace' in String.prototype
+        && typeof String.prototype.replace === 'function'
+}
+
+function parseSupported() {
+    return 'parse' in JSON
+        && typeof JSON.parse === 'function'
+}
+
+function appendChildSupported() {
+    return 'appendChild' in document
+        && typeof document.appendChild === 'function'
+}
+
 
 function getElementsByClassNameAlternative(className) {
     var matches = []
@@ -46,9 +82,9 @@ function getElementsByClassNameAlternative(className) {
 }
 
 function getHtmlElementsByClass(className) {
-    if (querySelectorAllExists()) {
+    if (querySelectorAllSupported()) {
         return document.querySelectorAll('.' + className)
-    } else if (getElementsByClassNameExists()) {
+    } else if (getElementsByClassNameSupported()) {
         return document.getElementsByClassName(className)
     } else {
         return getElementsByClassNameAlternative(className)
@@ -66,8 +102,15 @@ function attachEventListener(target, eventName, callback) {
 }
 
 function canMakeUseOfJavaScript() {
-    return getElementsByTagNameExists() 
-        && XMLHttpRequestExists()
-        && geolocationExists()
-        && setAttributeExists()
+    return getElementsByTagNameSupported() 
+        && XMLHttpRequestSupported()
+        && geolocationSupported()
+        && setAttributeSupported()
+        && innerHTMLSupported()
+        && innerTextSupported()
+        && indexOfSupported()
+        && splitSupported()
+        && replaceSupported()
+        && parseSupported()
+        && appendChildSupported()
 }
