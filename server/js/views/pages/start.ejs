@@ -5,23 +5,8 @@
 </head>
 <body>
     <main>
-        <% if(json) { %>
-            <h1>Start</h1>
-            <a href="<%= nextRoute %>">Leave your home and go on a adventure</a>
-            <ul>
-                <li>
-                    <a href="/start" class="current">Home</a>
-                </li>
-                <% json.steps.forEach(function (step, i) { %>
-                    <li>
-                        <a href="<%= nextRoute %>#<%= i + 1 %>" class="current"><%= i + 1 %></a>
-                    </li>
-                <% }) %>
-                <li>
-                    <a href="<%= finishRoute %>">Finish</a>
-                </li>
-            </ul>
-        <% } %>
+        <h1>Start</h1>
+        <a href="<%= nextRoute %>">Leave your home and go on a adventure</a>
     </main>
 </body>
 </html>

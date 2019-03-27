@@ -59,14 +59,14 @@ const handleGoRoute = async (request, response) => {
         const json = await JSON.parse(data)
         response.status(200).render('../views/pages/go.ejs', {
             json,
-            nextRoute: `/finish`,
+            nextRoute: `/finish?transportType=${transportType}`,
         })
     } else {
         const data = await readFile(walkingFilePath)
         const json = await JSON.parse(data)
         response.status(200).render('../views/pages/go.ejs', {
             json,
-            nextRoute: `/finish`,
+            nextRoute: `/finish?transportType=${transportType}`,
         })
     }
 }
