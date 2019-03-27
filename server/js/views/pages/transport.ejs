@@ -8,7 +8,7 @@
         <h1>
             Choose your form of transport
         </h1>
-        <% if(name && lat && lng) { %>
+        <% if(name !== 'undefined' && lat !== 'undefined' && lng !== 'undefined') { %>
             <form
                 action="/start/car?name=<%= name %>&lat=<%= lat %>&lng=<%= lng %>"
                 method="POST"

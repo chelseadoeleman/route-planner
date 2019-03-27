@@ -15,11 +15,18 @@ const handleIndexRoute = (request, response) => {
 const handleTransportRoute = (request, response) => {
     const { name, lat, lng } = request.query
 
-    response.render('../views/pages/transport.ejs', {
-        name,
-        lat,
-        lng
-    })
+    response.render(
+        '../views/pages/transport.ejs', 
+        (name && lat && lng) ? {
+            name,
+            lat,
+            lng
+        } : {
+            name: undefined,
+            lat: undefined,
+            lng: undefined
+        }
+    )
 }
 
 const handleStartRoute = async (request, response) => {

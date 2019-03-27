@@ -1,9 +1,14 @@
 if(canMakeUseOfJavaScript()) {
-	var queryParams = window.location.search.split('&')
-	var transportType = queryParams && queryParams[0].replace('?transportType=', '')
-	var name = queryParams && queryParams[1].replace('name=', '')
-	var lat = queryParams && queryParams[2].replace('lat=', '')
-	var lng = queryParams && queryParams[3].replace('lng=', '')
+	var hasAmpecent = window.location.search.indexOf('&') > -1
+	var queryParams = hasAmpecent 
+		? window.location.search.split('&')
+		: window.location.search
+	var transportType = queryParams && typeof queryParams === 'string' 
+		? queryParams.replace('?transportType=', '')
+		: queryParams[0] && queryParams[0].replace('?transportType=', '')
+	var name = queryParams && queryParams[1] && queryParams[1].replace('name=', '')
+	var lat = queryParams && queryParams[2] && queryParams[2].replace('lat=', '')
+	var lng = queryParams && queryParams[3] && queryParams[3].replace('lng=', '')
 
 	var state = {
 		currentLocation: {
@@ -46,7 +51,7 @@ if(canMakeUseOfJavaScript()) {
 		xhttp.open("GET", url , true)	
 		xhttp.send()
 	
-		attachEventListener(xhttp, 'load', function(event) {
+		attachEventListener(xhttp, 'load', function() {
 			var response = this.responseText
 			var data = JSON.parse(response)
 			var route = data.routes[0].geometry.coordinates
