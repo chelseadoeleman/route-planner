@@ -100,20 +100,6 @@ const transport = async (request, response) => {
     const { transportType } = request.params
 
     if (transportType === 'car' || transportType === 'walking') {
-        const mapboxDynamicKey = transportType === 'car'
-            ? 'driving'
-            : 'walking'
-        const routingUrl = `https://api.mapbox.com/directions/v5/mapbox/${mapboxDynamicKey}/`
-        const geometry = state.currentLocation.geometry
-        const from = `${geometry.lng},${geometry.lat}`
-        const destination = `;${state.destination.geometry.lng},${state.destination.geometry.lat}`
-        const key = `.json?access_token=pk.eyJ1IjoiY2hlbHNlYWRvZWxlbWFuIiwiYSI6ImNqdGswc3d5MTBya3U0M24wMTN3d3gxcHMifQ.ZfqXEPDV8XcCEkNfI8v0ug`
-        const url = `${routingUrl}${from}${destination}${key}&overview=full&steps=true&geometries=geojson`
-
-        const res = await fetch(url)
-        const data = await res.json()
-        console.dir(data, {showHidden: false, depth: null})
-
         response.status(304).redirect(`/start/?transportType=${transportType}`)
     } else {
         response.status(404).redirect('/')

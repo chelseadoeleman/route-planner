@@ -46,11 +46,24 @@ body {
     background-image: linear-gradient(130deg, rgb(27, 27, 27) 1%, rgb(15, 15, 15) 50%);
 }
 
+.map-wrapper {
+    position: relative;
+    margin: 2em auto;
+    padding-bottom: 20em;
+    background: none;
+}
+
 #map {
     position: absolute;
     top: 0;
-    bottom: 0;
-    width: 100%;
+    border-radius: .5em;
+    display: flex;
+    width: 100%; 
+    height: 100%;
+}
+
+.mapboxgl-ctrl-attrib-inner, .mapboxgl-ctrl-logo {
+    display: none!important;
 }
 
 main {

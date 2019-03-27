@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
     <% include ../components/head %>
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
     <main>
         <% if(json) { %>
             <h1>Go</h1>
-            <div id="map" style="min-width: 40vw; max-height: 90vh; margin-top: 2em; margin-right: 2em; position: relative;"></div>
+            <section class="map-wrapper">
+                <div id="map"></div>
+            </section>
             <% json.steps.forEach(function (step, i) { %>
                 <section>
                     <h2 id="<%= i + 1 %>">Step <%= i + 1 %></h2>
@@ -35,6 +36,8 @@
             </ul>
         <% } %>
     </main>
-    <script src="../../../../../../mapbox.js"></script>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+    <script src="../../../js/featureDetection.js"></script>
+    <script src="../../../js/index.js"></script>
 </body>
 </html>
