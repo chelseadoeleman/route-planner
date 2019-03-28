@@ -27,7 +27,7 @@ if (canMakeUseOfJavaScript()) {
     setLocationForm.appendChild(formButton)
 
     attachEventListener(transportLink, 'click', function(event) {
-        if(even.preventDefault) {
+        if(event.preventDefault) {
             event.preventDefault()
         }
         navigator.geolocation.getCurrentPosition(function(position) {

@@ -109,7 +109,11 @@ const setLocation = async (request, response) => {
     const data = await res.json()
     const geometry = data && data.results && data.results[0] && data.results[0].geometry
 
-    response.status(304).redirect(`/transport?name=${location.toLowerCase()}&lat=${geometry.lat}&lng=${geometry.lng}`)
+    if(geometry) {
+        response.status(304).redirect(`/transport?name=${location.toLowerCase()}&lat=${geometry.lat}&lng=${geometry.lng}`)
+    } else {
+        response.status(409).redirect('/')
+    }
 }
 
 module.exports = {
