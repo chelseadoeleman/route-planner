@@ -63,6 +63,10 @@ function appendChildSupported() {
         && typeof document.appendChild === 'function'
 }
 
+function mapSupported() {
+    return 'Map' in window
+        && typeof window.Map === 'function'
+}
 
 function getElementsByClassNameAlternative(className) {
     var matches = []
@@ -113,4 +117,5 @@ function canMakeUseOfJavaScript() {
         && replaceSupported()
         && parseSupported()
         && appendChildSupported()
+        && mapSupported()
 }

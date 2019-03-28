@@ -47,6 +47,19 @@ if(canMakeUseOfJavaScript()) {
 	})
 
 	map.on('load', function() {
+		var image = getHtmlElementsByClass('map-image')[0]
+		console.log(image)
+		if (image && image.parentNode) {
+			image.style.opacity = '0'
+			setTimeout(function () {
+				image.parentNode.removeChild(image)
+			}, 500)
+		}
+		var mapbox = document.getElementById('map')
+		if (mapbox) {
+			mapbox.style.opacity = '1'
+		}
+
 		var xhttp = new XMLHttpRequest()
 		xhttp.open("GET", url , true)	
 		xhttp.send()
