@@ -93,6 +93,9 @@ In the end I didn't have enough time to implement something for a bad broadband 
 
 ## Accessability
 
+![Audit index](./docs/index.png)
+![Audit map](./docs/map.png)
+
 <details>
   <summary>Colors</summary>
 
