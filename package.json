@@ -4,7 +4,8 @@
   "description": "web-app-from-scratch",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon ./server/js/index.js"
+    "start": "node ./server/js/index.js",
+    "start-server": "nodemon ./server/js/index.js"
   },
   "repository": {
     "type": "git",

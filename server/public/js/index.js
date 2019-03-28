@@ -27,11 +27,13 @@ if (canMakeUseOfJavaScript()) {
     setLocationForm.appendChild(formButton)
 
     attachEventListener(transportLink, 'click', function(event) {
-        event.preventDefault()
-
+        if(even.preventDefault) {
+            event.preventDefault()
+        }
         navigator.geolocation.getCurrentPosition(function(position) {
             location.replace('/transport?name=currentLocation&lat=' + position.coords.latitude + '&lng=' + position.coords.longitude)
         })
+        return false 
     })
 
     main.appendChild(transportLink)
