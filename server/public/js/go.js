@@ -43,7 +43,7 @@ if(canMakeUseOfJavaScript()) {
 		container: 'map',
 		style: 'mapbox://styles/mapbox/dark-v9',
 		center: [4.895168, 52.370216], // starting position
-		zoom: 10
+		zoom: 8
 	})
 
 	map.on('load', function() {
@@ -157,6 +157,7 @@ function renderStep(step, currentX, directions, navigation) {
 	distanceItem.innerText = distance + 'm'
 
 	steps.setAttribute('href', '#' + stepNumber)
+	steps.setAttribute('aria-label', 'step ' + stepNumber)
 	steps.innerText = stepNumber
 
 	list.appendChild(maneuverItem)

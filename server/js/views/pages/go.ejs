@@ -30,7 +30,7 @@
                 </li>
                 <% json.steps.forEach(function (step, i) { %>
                 <li>
-                    <a href="#<%= i + 1 %>" class="current"><%= i + 1 %></a>
+                    <a aria-label="step <%= i + 1 %>" href="#<%= i + 1 %>" class="current"><%= i + 1 %></a>
                 </li>
                 <% }) %>
                 <li>

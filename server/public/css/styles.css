@@ -101,10 +101,11 @@ img {
 .steps {
     display: block;
 }
+
 h1 {
     margin: .5em;
     text-align: center;
-    font-size: 250%;
+    font-size: 300%;
 }
 
 p {
@@ -142,11 +143,31 @@ a {
     padding: 7% 10%;
 }
 
+a:focus, 
+a:hover {
+    color: #f4f4f4;
+    background-color: #790091;
+    background-image: linear-gradient(150deg, #be4934 1%, #790091 50%);
+    transform: scale(1.03);
+}
+
+button:focus, 
+button:hover {
+    color: #f4f4f4;
+    background-color: #790091;
+    background-image: linear-gradient(150deg, #be4934 1%, #790091 50%);
+    transform: scale(1.2);
+}
+
+input:focus,
+input:hover {
+    border: 3px;
+    border-style: solid;
+    border-color: #be4934;
+    min-width: 30%;
+}
+
 form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
     font-size: 150%;
     border-radius: .2em;
     background-color: #3454be;
@@ -159,22 +180,31 @@ button {
     display: block;
     min-width: 30px;
     border-radius: .2em;
-    color: #430091;
-    background-color: #3454be;
-    background-image: linear-gradient(150deg, #95cfff 1%, #cea4ff 50%);
+    color: #24004d;
     background-color: #95cfff;
+    background-image: linear-gradient(150deg, #95cfff 1%, #cea4ff 50%);
     border-style: none;
     padding: .65em;
     margin: 0 .5em;
 }
 
 @supports (display: flex) {
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
     ul {
-        margin: 0 auto;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
     }
+}
+
+ul {
+    margin: 0 auto;
 }
 
 ul li {
