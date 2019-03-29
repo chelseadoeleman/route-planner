@@ -182,6 +182,16 @@ In the end I didn't have enough time to implement something for a bad broadband 
 
 ## Feature detection
 
+I started off by using feature detection in my CSS with @supports for flexbox, which just makes everything look a lot smoother. When flexbox can't be loaded it falls back on ```margin: 0 auto;``` which just centers every element nicely.
+
+After that I went ahead and used feature detection in Javascript on the client by mainly checking if a feature exists in that specific browser and defining it's type correctly. In the end it did become a long list eventhough is skipped features that were almost provided everywhere or not below **IE8**. Most of the application works because I turned of the Javascript function below **IE11** because Mapbox does not support earlier versions. See [featureDetection.js](./server/public/js/featureDetection.js) for all the features I used.
+
+**Device Lab**
+
+I also tested my application in the Device Lab and everywhere it seemed to work. Some didn't have full extent to the whole application, due to the fact that some features weren't supported properly. But the core functionality could be used on every device. Some did provide the user with Mapbox and some didn't.
+
+![Device Lab](./docs/devicelab1.jpg)
+![Device Lab 2](./docs/devicelab2.jpg)
 
 ## Resources
 
@@ -196,7 +206,6 @@ In the end I didn't have enough time to implement something for a bad broadband 
 * [Opencage Geocoding API](https://opencagedata.com/api)
 
 ## Credits
-
 *   **Maikel:** Helping with some feature detection and setting up Mapbox.
 
 ## License
