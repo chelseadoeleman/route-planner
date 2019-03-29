@@ -64,18 +64,29 @@ In the first place I found it hard to divide my application into four layers: fu
 **Browser tests**
 *   Internet Explorer *(v5-v11) tested with virtualBox IE11 and other version by opening the inspector*
     *   v11 works fine! Some weird things I noticed is that @supports is not yet supported in IE11 however flexbox is. So at first I checked if flexbox was supported with ```@supports```, but this totally broke the styling.
+    ![IE11](./docs/ie11.png)
     *   From v10 some functionality dissapears from the application, due to the fact that mapbox isn't supported below IE11.
+    ![IE10](./docs/ie10.png)
     *   After v8 it becomes a complete mess, where the css looks a bit wonky. However the user is still able to walk through all the steps.
+    ![IE8](./docs/ie8.png)
+
 *   Safari *(latest)*
-    *   Works fine, but just using the keyboard to navigate proves to be quite difficult even when using ```<a>```, ```<button>``` can be selected with tabs.
+    *   Works fine, but just using the keyboard to navigate proves to be quite difficult even when using ```<a>``` html tag it doesn't focus on these links, ```<button>``` can be focused on with tabs.
+
 *   Opera mini *(latest)*
-    *   Everything seems to be working here! Eventhough it can be quite slow.
+    *   Everything seems to be working here even mapbox! Eventhough it can be quite slow.
+    ![Opera mini](./docs/operamini.jpg)
+    ![Opera mini 2](./docs/operamini2.jpg)
+
 *   Edge *(latest)*
     *   See IE11 explanation.
+
 *   Firefox *(latest)*
     *   Same problem as safari when navigating with the keyboard, other functions do work properly.
+
 *   Chrome *(latest)*
     *   Works accordingly, because I developed in this browser.
+
 *   Opera Neon *(latest)*
     * All features work in Opera Neon!
 
@@ -99,26 +110,42 @@ In the end I didn't have enough time to implement something for a bad broadband 
 <details>
   <summary>Colors</summary>
 
+  After running an audit I got the application had an accessability of **100** This includes all the colors. However Mapbox isn't really that visible when setting my clarity to the lowest point. Only people with normal eye sight are propably able to see this correctly. 
+
+  I tested my application on colorblindness with [Sim Daltonism](https://michelf.ca/projects/sim-daltonism/). After using this feature everything was still visible for the user.
+    ![Colorblindness](./docs/colorblindness.png)
+
 </details>
 
 <details>
   <summary>Cookies</summary>
 
+  After disabling cookies the application still works accordingly, this was done with the developer tools extension in Chrome.
 </details>
 
 
 <details>
-  <summary>Custom</summary>
+  <summary>Custom fonts</summary>
 
+  I did use a custom font, however after turning this off it just falls back on the fallback I had defined in my CSS. In this case "Arial", "Helvetica" or some other "Sans-serif" font the user defined in their preferences. It falls back on the fallback font in IE8 and versions before that.
 </details>
 
 <details>
   <summary>Images</summary>
 
+    I turned images off with the developer tools in Chrome. There was an alt text provided for that image, but it doesn't load. The steps which are most important part are still visible to the user. 
+
+![Car Route](./docs/noimage.png)
 </details>
 
 <details>
-  <summary>Internet</summary>
+  <summary>Internet broadband</summary>
+
+    When the internet connection is slow it does take some time to fetch data from the API however some  content is directly shown, though this is not dynamic yet. I also takes some time for Mapbox to load, but this doesn't take away from it's core functionality of this application. It can however be improved see 
+
+[Walktrough the application](#walk-trough-the-application) for more information
+
+![First view](./docs/first.png)
 
 </details>
 
@@ -126,16 +153,29 @@ In the end I didn't have enough time to implement something for a bad broadband 
 <details>
   <summary>Javascript</summary>
 
+  I turned Javascript off with the Chrome web developer tools. After turning of this feature the user is only able navigate from my home to the Device lab instead of running this route dynamically. These options dissappear from the menu, so the user doesn't know any better.
+![Turned of Javascript](./docs/javascript.png)
 </details>
 
 <details>
   <summary>Localstorage</summary>
+
+  Disabling localstorage can be done by disabling cookies. Which doesn't proves to be a hinder for the application to function properly.
 
 </details>
 
 
 <details>
   <summary>Mouse and/or trackpad</summary>
+
+  In Chrome the user is able to navigate through the application with only there keyboard. However different browsers have different keyboard shortcuts and it doens't work the same in every browser. Focus styles are also applied when focusing on an element like a **button** or a **link**.
+
+</details>
+
+<details>
+  <summary>Screenreader</summary>
+
+  The start the screenreader hold ```command + option + f5". The screenreader works accordingly to navigate throughout the page. I did make use of an ```aria-label``` attribute in the links for the steps, so that the user is provided with more information about that link, than just a number.
 
 </details>
 
