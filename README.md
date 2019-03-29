@@ -175,7 +175,7 @@ In the end I didn't have enough time to implement something for a bad broadband 
 <details>
   <summary>Screenreader</summary>
 
-  The start the screenreader hold ```command + option + f5". The screenreader works accordingly to navigate throughout the page. I did make use of an ```aria-label``` attribute in the links for the steps, so that the user is provided with more information about that link, than just a number.
+  The start the screenreader hold ```command + option + f5". The screenreader works accordingly to navigate throughout the page. I did make use of an ```aria-label``` attribute in the links for the steps, so that the user is provided with more information about that link, than just a number and they know they are following a list.
 
 </details>
 
