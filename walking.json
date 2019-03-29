@@ -1,16 +1,50 @@
 {
-    "start": {
-        "direction": "Go to the right on Laan van Loevenstein",
-        "min": "10 min"
-    },
     "steps": [
-        {
-            "direction": "Walk 4.7 km along Hoofdweg",
-            "min": "300 min"
-        },
-        {
-            "direction": "Go to Wibautstraat 2,4 Theo Thijssen Huis HvA",
-            "min": "15 min"
-        }
+        {"direction": "Loop naar het zuiden op het Leusveld, richting het Wapserveld ", "distance": "240m"},
+        {"direction": "Sla linksaf naar de Vivaldisingel", "distance": "1km"},
+        {"direction": "Sla rechtsaf", "distance": "250m"},
+        {"direction": "Sla linksaf naar de Zuidtak Zuidtangent", "distance": "500m"},
+        {"direction": "Sla rechtsaf richting de Lucas Bolsstraat", "distance": "40m"},
+        {"direction": "Sla linksaf naar de Lucas Bolsstraat", "distance": "12m"},
+        {"direction": "Sla rechtsaf om op de Lucas Bolsstraat te blijven", "distance": "280m"},
+        {"direction": "Flauwe bocht naar links om op de Lucas Bolsstraat te blijven", "distance": "27m"},
+        {"direction": "Sla linksaf", "distance": "25m"},
+        {"direction": "Flauwe bocht naar rechts", "distance": "700m"},
+        {"direction": "Sla linksaf naar de Hoofdweg.", "distance": "4.7km"},
+        {"direction": "Sla linksaf richting de Hoofdweg", "distance": "13m"},
+        {"direction": "Sla rechtsaf naar de Hoofdweg", "distance": "800m"},
+        {"direction": "Sla rechtsaf bij de Raadhuislaan", "distance": "18m"},
+        {"direction": "Neem de 4e afslag op het Beursplein naar de Hoofdweg", "distance": "6,9km"},
+        {"direction": "Sla rechtsaf", "distance": "140m"},
+        {"direction": "Sla rechtsaf", "distance": "37m"},
+        {"direction": "Flauwe bocht naar links bij de San Franciscostraat", "distance": "350m"},
+        {"direction": "Sla linksaf", "distance": "800m"},
+        {"direction": "Ga rechtdoor op de Wijsentkade", "distance": "75m"},
+        {"direction": "Flauwe bocht naar rechts", "distance": "170m"},
+        {"direction": "Sla linksaf", "distance": "14m"},
+        {"direction": "Sla rechtsaf", "distance": "900m"},
+        {"direction": "Ga rechtdoor op de A Reitsmakade", "distance": "39m"},
+        {"direction": "Sla linksaf naar de Pieter Calandlaan", "distance": "250m"},
+        {"direction": "Sla rechtsaf naar het Iwan Kantemanplein ", "distance": "250m"},
+        {"direction": "Sla linksaf naar de Pieter Calandlaan/de s107", "distance": "15m"},
+        {"direction": "Flauwe bocht naar rechts om op de Pieter Calandlaan te blijven", "distance": "3,1km"},
+        {"direction": "Weg vervolgen naar de Schipluidenlaan Ga rechtdoor over één rotonde", "distance": "55m"},
+        {"direction": "Flauwe bocht naar rechts om op de Schipluidenlaan te blijven", "distance": "400m"},
+        {"direction": "Neem op de rotonde de 3e afslag naar de Hendrikje Stoffelsstraat", "distance": "36m"},
+        {"direction": "Sla rechtsaf om op de Hendrikje Stoffelsstraat te blijven", "distance": "250m"},
+        {"direction": "Sla rechtsaf", "distance": "36m"},
+        {"direction": "Sla linksaf", "distance": "49m"},
+        {"direction": "Sla rechtsaf richting de Theophile de Bockstraat", "distance": "230m"},
+        {"direction": "Sla linksaf naar de Theophile de Bockstraat", "distance": "100m"},
+        {"direction": "Sla linksaf naar de Sloterkade", "distance": "350m"},
+        {"direction": "Sla rechtsaf naar het Vondelpark", "distance": "5m"},
+        {"direction": "Sla rechtsaf om op het Vondelpark te blijven", "distance": "1,2km"},
+        {"direction": "Sla rechtsaf om op het Vondelpark te blijven", "distance": "400m"},
+        {"direction": "Weg vervolgen naar de Pieter Cornelisz Hooftstraat", "distance": "700m"},
+        {"direction": "Sla rechtsaf naar de Stadhouderskade/de s100", "distance": "1,5km"},
+        {"direction": "Sla rechtsaf naar de Amsteldijk/de s110", "distance": "9m"},
+        {"direction": "Sla linksaf", "distance": "220m"},
+        {"direction": "Sla rechtsaf", "distance": "19m"},
+        {"direction": "Sla linksaf bij de Mauritsstraat", "distance": "56m"}
     ]
 }
