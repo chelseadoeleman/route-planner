@@ -43,7 +43,7 @@ if(canMakeUseOfJavaScript()) {
 		container: 'map',
 		style: 'mapbox://styles/mapbox/dark-v9',
 		center: [4.895168, 52.370216], // starting position
-		zoom: 8
+		zoom: 9
 	})
 
 	map.on('load', function() {
@@ -125,8 +125,8 @@ if(canMakeUseOfJavaScript()) {
 						'line-cap': 'round'
 					},
 					paint: {
-						'line-color': '#8151b8',
-						'line-width': 5,
+						'line-color': '#963aff',
+						'line-width': 6,
 						'line-opacity': .75
 					}
 				}
