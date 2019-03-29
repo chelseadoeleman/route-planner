@@ -52,7 +52,7 @@ if(canMakeUseOfJavaScript()) {
 			image.style.opacity = '0'
 			setTimeout(function () {
 				image.parentNode.removeChild(image)
-			}, 500)
+			}, 200)
 		}
 		var mapbox = document.getElementById('map')
 		if (mapbox) {
