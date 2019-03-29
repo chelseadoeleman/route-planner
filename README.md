@@ -42,7 +42,7 @@ npm install
 
 For this project I chose the following user case **"Plan your route from my home to the CMD Device Lab"**. First off I sketched a wireflow with the core functionality of how the application should behave and how interaction works within the application.
 
-![Wireflow](./docs/wireflow.jpg)
+![Wireflow](./docs/wireflow.JPG)
 
 In the first place I found it hard to divide my application into four layers: functional, reliable, usable and pleasurable. Looking back at it now, I would like to add some changes to my sketch.
 
@@ -190,8 +190,8 @@ After that I went ahead and used feature detection in Javascript on the client b
 
 I also tested my application in the Device Lab and everywhere it seemed to work. Some didn't have full extent to the whole application, due to the fact that some features weren't supported properly. But the core functionality could be used on every device. Some did provide the user with Mapbox and some didn't.
 
-![Device Lab](./docs/devicelab1.jpg)
-![Device Lab 2](./docs/devicelab2.jpg)
+![Device Lab](./docs/devicelab1.JPG)
+![Device Lab 2](./docs/devicelab2.JPG)
 
 ## Resources
 
