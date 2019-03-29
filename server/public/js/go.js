@@ -48,7 +48,6 @@ if(canMakeUseOfJavaScript()) {
 
 	map.on('load', function() {
 		var image = getHtmlElementsByClass('map-image')[0]
-		console.log(image)
 		if (image && image.parentNode) {
 			image.style.opacity = '0'
 			setTimeout(function () {
@@ -67,8 +66,8 @@ if(canMakeUseOfJavaScript()) {
 		attachEventListener(xhttp, 'load', function() {
 			var response = this.responseText
 			var data = JSON.parse(response)
-			var route = data.routes[0].geometry.coordinates
-			var steps = data.routes[0].legs[0].steps
+			var route = data && data.routes && data.routes[0] && data.routes[0].geometry && data.routes[0].geometry.coordinates
+			var steps = data && data.routes && data.routes[0] && data.routes[0].legs &&data.routes[0].legs[0] &&data.routes[0].legs[0].steps
 			
 			if (steps && steps.length > 0) {
 				var directions = getHtmlElementsByClass('directions')[0]
@@ -77,25 +76,26 @@ if(canMakeUseOfJavaScript()) {
 				var finishItem = document.createElement('li')
 				var start = document.createElement('a')
 				var finish = document.createElement('a')
-				
-				directions.innerHTML = ''
-				navigation.innerHTML= ''
+				if (directions && navigation) {
+					directions.innerHTML = ''
+					navigation.innerHTML= ''
 
-				start.setAttribute('href', '/start')
-				start.innerText = 'Start'
-				finish.setAttribute('href', '/finish')
-				finish.innerText = 'Finish'
+					start.setAttribute('href', '/start')
+					start.innerText = 'Start'
+					finish.setAttribute('href', '/finish')
+					finish.innerText = 'Finish'
 
-				startItem.appendChild(start)
-				finishItem.appendChild(finish)
+					startItem.appendChild(start)
+					finishItem.appendChild(finish)
 
-				navigation.appendChild(startItem)
+					navigation.appendChild(startItem)
 
-				for(var x = 0; x < steps.length; x++) {
-					renderStep(steps[x], x, directions, navigation)
+					for(var x = 0; x < steps.length; x++) {
+						renderStep(steps[x], x, directions, navigation)
+					}
+
+					navigation.appendChild(finishItem)
 				}
-
-				navigation.appendChild(finishItem)
 			}
 
 			var geojson = {
