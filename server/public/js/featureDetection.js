@@ -99,7 +99,7 @@ function attachEventListener(target, eventName, callback) {
     if ('addEventListener' in target) {
         target.addEventListener(eventName, callback)
     } else if ('attachEvent' in target) {
-        target.attachEvent('on' + eventName, callback)
+        target.attachEvent(eventName, callback)
     } else {
         throw new Error('cannot attach event')
     }
