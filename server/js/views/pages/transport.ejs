@@ -9,7 +9,8 @@
             Choose your form of transport
         </h1>
         <% if(name !== 'undefined' && lat !== 'undefined' && lng !== 'undefined') { %>
-            <form
+            <form 
+                class="transport"
                 action="/start/car?name=<%= name %>&lat=<%= lat %>&lng=<%= lng %>"
                 method="POST"
                 enctype="application/x-www-form-urlencoded"
@@ -18,7 +19,8 @@
                     Car
                 </button>
             </form>
-            <form
+            <form 
+                class="transport"
                 action="/start/walking?name=<%= name %>&lat=<%= lat %>&lng=<%= lng %>"
                 method="POST"
                 enctype="application/x-www-form-urlencoded"
@@ -28,7 +30,8 @@
                 </button>
             </form>
         <% } else { %>
-            <form
+            <form 
+                class="transport"
                 action="/start/car"
                 method="POST"
                 enctype="application/x-www-form-urlencoded"
@@ -37,7 +40,8 @@
                     Car
                 </button>
             </form>
-            <form
+            <form 
+                class="transport"
                 action="/start/walking"
                 method="POST"
                 enctype="application/x-www-form-urlencoded"

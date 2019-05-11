@@ -7,36 +7,23 @@
 <body>
     <main>
         <% if(json) { %>
-            <h1>Go</h1>
+            <h1>Start the route to the Device Lab!</h1>
             <section class="map-wrapper">
                 <img class="map-image" src="../../../assets/carRoute.png" alt="route">
                 <div id="map"></div>
             </section>
             <div class="directions">
                 <% json.steps.forEach(function (step, i) { %>
-                    <section>
+                    <a aria-label="step <%= i + 1 %>" href="#<%= i + 1 %>">
                         <h2 id="<%= i + 1 %>">Step <%= i + 1 %></h2>
                         <ul class="steps">
                             <li><%= step.direction %></li>
                             <li><%= step.distance %></li>
                         </ul>
-                    </section>
+                    </a>
                 <% }) %>
+                <a href="<%= nextRoute %>">Finish</a>
             </div>
-            <ul class="navigation">
-                <li>
-                    <a href="/start">Home</a>
-                </li>
-                <% json.steps.forEach(function (step, i) { %>
-                <li>
-                    <a aria-label="step <%= i + 1 %>" href="#<%= i + 1 %>" class="current"><%= i + 1 %></a>
-                </li>
-                <% }) %>
-                <li>
-                    <a href="<%= nextRoute %>">Finish</a>
-                </li>
-            </ul>
-            <a href="<%= nextRoute %>">Finish</a>
         <% } %>
     </main>
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
