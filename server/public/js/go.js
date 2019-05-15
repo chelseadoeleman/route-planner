@@ -42,8 +42,10 @@ if(canMakeUseOfJavaScript()) {
 	var map = new mapboxgl.Map({
 		container: 'map',
 		style: 'mapbox://styles/mapbox/dark-v9',
+		pitch: 70, // pitch in degrees
+		bearing: 360, // bearing in degrees
 		center: [4.895168, 52.370216], 
-		zoom: 7
+		zoom: 8
 	})
 
 	var bounds = [[-1.729682844139461, 50.146374056518475], [11.959281999610539, 53.57726348010249]];
