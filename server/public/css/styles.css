@@ -136,7 +136,9 @@ h3 {
 }
 
 p {
+    margin: 0 auto;
     margin-bottom: 1em;
+    text-align: center;
 }
 
 label {
@@ -182,18 +184,6 @@ button:hover {
     background-color: #5EC1D9;
 }
 
-/* form {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: 150%;
-    border-radius: .2em;
-    border-style: none;
-    padding: 5% 5%;
-} */
-
 
 .form-location {
     display: flex;
@@ -209,6 +199,7 @@ button:hover {
     min-width: 30px;
     border-radius: .2em; */
     background-color: #474747;
+    margin: 0 auto;
     margin-bottom: 1em;
     /* border-style: none;
     padding: .65em;
@@ -317,8 +308,19 @@ ul {
     transition: background-color .35s ease;
 }
 
+.directions input:hover + .direction-items,
+.directions input:focus + .direction-items {
+    background-color: #5EC1D9;
+}
+
 .directions input:checked + .direction-items {
     background-color: #ff7856;
+}
+
+
+.distance {
+    color: #4F4FC4;
+    text-shadow: 1px 1px #474747;
 }
 
 /* .direction input {

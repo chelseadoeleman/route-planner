@@ -1,10 +1,26 @@
 if (canMakeUseOfJavaScript()) {
+    var button = document.getElementsByTagName('button')[0]
+    var inputForm = document.getElementsByTagName('input')[0]
+    var form = document.getElementsByTagName('form')[0]
+    button.addEventListener('click', () => {
+        if (inputForm.value === '') {
+            // var message = document.createElement('p')
+            // message.innerText = 'Please enter a location'
+            // form.appendChild(message)
+
+            alert('Please enter your location')
+        }
+        // console.log(inputForm.value)
+        // console.log('hello')
+    })
+    console.log(inputForm);
+
     if (geolocationSupported()) {
         var center = document.getElementsByClassName('Center__wrap')[0]
         if(center) {
             var transportLink = document.createElement('a')
             transportLink.href = '/transport'
-            transportLink.innerText = 'Go from my current location'
+            transportLink.innerText = 'Use my current location'
             
             // var setLocationForm = document.createElement('form')
             // setLocationForm.name = 'from'

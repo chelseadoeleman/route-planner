@@ -9,7 +9,7 @@
         <% if(steps) { %>
             <h1>Start the route to the Device Lab!</h1>
             <section class="map-wrapper">
-                <div>We're sorry to inform you that the map could not be loaded.</div>
+                <div class="error-message">We're sorry to inform you that the map could not be loaded.</div>
                 <div id="map"></div>
             </section>
             <h2>Follow the following steps to the device lab!</h2>
@@ -23,15 +23,15 @@
                             <ul class="steps" id="<%= i + 1 %>">
                                 <li><%= step && step.maneuver && step.maneuver.instruction %></li>
                                 <% if (step && Math.floor(step.distance) !== 0) { %>
-                                    <li><%=step && Math.floor(step.distance)%> m</li>
+                                    <li class="distance"><%=step && Math.floor(step.distance)%> m</li>
                                 <% } else { %>
-                                    <li>End</li>
+                                    <li class="distance">End</li>
                                 <% } %>
                             </ul>
                         </div>
                     </label>
                 <% }) %>
-                <a href="/">You found the Device Lab! Good Job! Stop the navigation</a>
+                <a href="/" class="finish">You found the Device Lab! Good Job! Stop the navigation</a>
             </div>
         <% } %>
     </main>

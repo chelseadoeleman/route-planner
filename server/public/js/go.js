@@ -50,11 +50,11 @@ if(canMakeUseOfJavaScript()) {
 	map.setMaxBounds(bounds);
 
 	map.on('load', function() {
-		var image = getHtmlElementsByClass('map-image')[0]
-		if (image && image.parentNode) {
-			image.style.opacity = '0'
+		var error = getHtmlElementsByClass('error-message')[0]
+		if (error && error.parentNode) {
+			error.style.opacity = '0'
 			setTimeout(function () {
-				image.parentNode.removeChild(image)
+				error.parentNode.removeChild(error)
 			}, 200)
 		}
 		var mapbox = document.getElementById('map')
