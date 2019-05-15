@@ -1,17 +1,10 @@
 if (canMakeUseOfJavaScript()) {
     var button = document.getElementsByTagName('button')[0]
     var inputForm = document.getElementsByTagName('input')[0]
-    var form = document.getElementsByTagName('form')[0]
+    var message = document.getElementsByClassName('message')[0]
+    
     button.addEventListener('click', () => {
-        if (inputForm.value === '') {
-            // var message = document.createElement('p')
-            // message.innerText = 'Please enter a location'
-            // form.appendChild(message)
-
-            alert('Please enter your location')
-        }
-        // console.log(inputForm.value)
-        // console.log('hello')
+        message.style = 'opacity: 1;'
     })
     console.log(inputForm);
 
