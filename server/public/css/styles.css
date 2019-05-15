@@ -89,6 +89,25 @@ main {
     max-width: 75%;
 }
 
+main.Center {
+    margin: initial;
+    min-width: initial;
+    max-width: initial;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Center__wrap {
+    margin: 0 auto;
+    min-width: 60%;
+    max-width: 75%;
+}
+
 img {
     margin: 0 auto;
     margin-top: -3.1%;
@@ -134,8 +153,8 @@ input {
     min-width: 30px;
     margin: 1em;
     border-style: none;
-    padding: 1em;
-    border-radius: .5em;
+    padding: 1.25em;
+    border-radius: .2em;
 }
 
 a {
@@ -190,6 +209,7 @@ button:hover {
     min-width: 30px;
     border-radius: .2em; */
     background-color: #474747;
+    margin-bottom: 1em;
     /* border-style: none;
     padding: .65em;
     margin: 0 .5em; */
@@ -235,6 +255,10 @@ button {
     padding: .65em;
     margin: 0 .5em;
     transition: background-color .35s ease;
+}
+
+#transport button {
+    margin-bottom: 1em;
 }
 
 @supports (display: flex) {

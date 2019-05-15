@@ -4,53 +4,55 @@
     <% include ../components/head %>
 </head>
 <body>
-    <main>
-        <h1>
-            Choose your form of transport
-        </h1>
-        <% if(name !== 'undefined' && lat !== 'undefined' && lng !== 'undefined') { %>
-            <form 
-                class="transport"
-                action="/start/car?name=<%= name %>&lat=<%= lat %>&lng=<%= lng %>"
-                method="POST"
-                enctype="application/x-www-form-urlencoded"
-            >
-                <button type="submit">
-                    Car
-                </button>
-            </form>
-            <form 
-                class="transport"
-                action="/start/walking?name=<%= name %>&lat=<%= lat %>&lng=<%= lng %>"
-                method="POST"
-                enctype="application/x-www-form-urlencoded"
-            >
-                <button type="submit">
-                    Walking
-                </button>
-            </form>
-        <% } else { %>
-            <form 
-                class="transport"
-                action="/start/car"
-                method="POST"
-                enctype="application/x-www-form-urlencoded"
-            >
-                <button type="submit">
-                    Car
-                </button>
-            </form>
-            <form 
-                class="transport"
-                action="/start/walking"
-                method="POST"
-                enctype="application/x-www-form-urlencoded"
-            >
-                <button type="submit">
-                    Walking
-                </button>
-            </form>
-        <% } %>
+    <main class="Center" id="transport">
+        <div class="Center__wrap">
+            <h1>
+                Choose your form of transport
+            </h1>
+            <% if(name !== 'undefined' && lat !== 'undefined' && lng !== 'undefined') { %>
+                <form 
+                    class="transport"
+                    action="/start/car?name=<%= name %>&lat=<%= lat %>&lng=<%= lng %>"
+                    method="POST"
+                    enctype="application/x-www-form-urlencoded"
+                >
+                    <button type="submit">
+                        Car
+                    </button>
+                </form>
+                <form 
+                    class="transport"
+                    action="/start/walking?name=<%= name %>&lat=<%= lat %>&lng=<%= lng %>"
+                    method="POST"
+                    enctype="application/x-www-form-urlencoded"
+                >
+                    <button type="submit">
+                        Walking
+                    </button>
+                </form>
+            <% } else { %>
+                <form 
+                    class="transport"
+                    action="/start/car"
+                    method="POST"
+                    enctype="application/x-www-form-urlencoded"
+                >
+                    <button type="submit">
+                        Car
+                    </button>
+                </form>
+                <form 
+                    class="transport"
+                    action="/start/walking"
+                    method="POST"
+                    enctype="application/x-www-form-urlencoded"
+                >
+                    <button type="submit">
+                        Walking
+                    </button>
+                </form>
+            <% } %>
+        </div>
     </main>
 </body>
 </html>

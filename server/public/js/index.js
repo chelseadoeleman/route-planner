@@ -1,7 +1,7 @@
 if (canMakeUseOfJavaScript()) {
     if (geolocationSupported()) {
-        var main = document.getElementsByTagName('main')[0]
-        if(main) {
+        var center = document.getElementsByClassName('Center__wrap')[0]
+        if(center) {
             var transportLink = document.createElement('a')
             transportLink.href = '/transport'
             transportLink.innerText = 'Go from my current location'
@@ -38,7 +38,7 @@ if (canMakeUseOfJavaScript()) {
                 return false 
             })
         
-            main.appendChild(transportLink)
+            center.appendChild(transportLink)
             // main.appendChild(setLocationForm)
         }
     } else {

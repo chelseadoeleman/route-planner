@@ -4,17 +4,19 @@
     <% include ../components/head %>
 </head>
 <body>
-    <main>
-        <h1>
-            Find my route to the Device Lab
-        </h1>
-        <form action="/setLocation" name="from" method="POST" class="form-location">
-            <label for="name">
-                From
-                <input id="from" type="text" name="location">
-            </label>
-            <button type="submit">Start my route</button>
-        </form>
+    <main class="Center">
+        <div class="Center__wrap">
+            <h1>
+                Find my route to the Device Lab
+            </h1>
+            <form action="/setLocation" name="from" method="POST" class="form-location">
+                <label for="from">
+                    From
+                    <input id="from" type="text" name="location" placeholder="Amsterdam" required>
+                </label>
+                <button type="submit">Start my route</button>
+            </form>
+        </div>
     </main>
     <script src="../../../js/featureDetection.js"></script>
     <script src="../../../js/index.js"></script>
