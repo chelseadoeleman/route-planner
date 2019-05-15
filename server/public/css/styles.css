@@ -95,7 +95,7 @@ main.Center {
     max-width: initial;
     min-height: 100vh;
     max-height: 100vh;
-    overflow-y: hidden;
+    overflow-y: auto;
     display: flex;
     justify-content: center;
     align-items: center;
