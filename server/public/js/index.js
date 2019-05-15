@@ -4,9 +4,10 @@ if (canMakeUseOfJavaScript()) {
     var message = document.getElementsByClassName('message')[0]
     
     button.addEventListener('click', () => {
-        message.style = 'opacity: 1;'
+        if (inputForm.value === '') {
+            message.style = 'opacity: 1;'
+        }
     })
-    console.log(inputForm);
 
     if (geolocationSupported()) {
         var center = document.getElementsByClassName('Center__wrap')[0]
