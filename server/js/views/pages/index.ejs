@@ -8,9 +8,13 @@
         <h1>
             Find my route to the Device Lab
         </h1>
-        <a href="/transport">
-            Start from home
-        </a>
+        <form action="/setLocation" name="from" method="POST" class="form-location">
+            <label for="name">
+                From
+                <input id="from" type="text" name="location">
+            </label>
+            <button type="submit">Start my route</button>
+        </form>
     </main>
     <script src="../../../js/featureDetection.js"></script>
     <script src="../../../js/index.js"></script>

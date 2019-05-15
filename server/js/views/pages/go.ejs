@@ -6,23 +6,32 @@
 </head>
 <body>
     <main>
-        <% if(json) { %>
+        <% if(steps) { %>
             <h1>Start the route to the Device Lab!</h1>
             <section class="map-wrapper">
-                <img class="map-image" src="../../../assets/carRoute.png" alt="route">
+                <div>We're sorry to inform you that the map could not be loaded.</div>
                 <div id="map"></div>
             </section>
+            <h2>Follow the following steps to the device lab!</h2>
+            <h3>Keep track of the steps by clicking or tapping on the finished ones.</h3>
             <div class="directions">
-                <% json.steps.forEach(function (step, i) { %>
-                    <a aria-label="step <%= i + 1 %>" href="#<%= i + 1 %>">
-                        <h2 id="<%= i + 1 %>">Step <%= i + 1 %></h2>
-                        <ul class="steps">
-                            <li><%= step.direction %></li>
-                            <li><%= step.distance %></li>
-                        </ul>
-                    </a>
+                <% steps.forEach(function (step, i) { %>
+                    <label>
+                        <input type="checkbox" aria-label="step <%= i + 1 %>" href="#<%= i + 1 %>">
+                        <div class="direction-items">
+                            <h2>Step <%= i + 1 %></h2>
+                            <ul class="steps" id="<%= i + 1 %>">
+                                <li><%= step && step.maneuver && step.maneuver.instruction %></li>
+                                <% if (step && Math.floor(step.distance) !== 0) { %>
+                                    <li><%=step && Math.floor(step.distance)%> m</li>
+                                <% } else { %>
+                                    <li>End</li>
+                                <% } %>
+                            </ul>
+                        </div>
+                    </label>
                 <% }) %>
-                <a href="<%= nextRoute %>">Finish</a>
+                <a href="/">You found the Device Lab! Good Job! Stop the navigation</a>
             </div>
         <% } %>
     </main>

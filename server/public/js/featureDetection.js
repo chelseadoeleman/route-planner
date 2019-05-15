@@ -63,11 +63,6 @@ function appendChildSupported() {
         && typeof document.appendChild === 'function'
 }
 
-function mapSupported() {
-    return 'Map' in window
-        && typeof window.Map === 'function'
-}
-
 function getElementsByClassNameAlternative(className) {
     var matches = []
     var tags = document.getElementsByTagName("*")
@@ -108,7 +103,6 @@ function attachEventListener(target, eventName, callback) {
 function canMakeUseOfJavaScript() {
     return getElementsByTagNameSupported() 
         && XMLHttpRequestSupported()
-        && geolocationSupported()
         && setAttributeSupported()
         && innerHTMLSupported()
         && innerTextSupported()
@@ -117,5 +111,4 @@ function canMakeUseOfJavaScript() {
         && replaceSupported()
         && parseSupported()
         && appendChildSupported()
-        && mapSupported()
 }

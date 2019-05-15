@@ -1,6 +1,6 @@
 @font-face {
-    font-family: "nunito-regular";
-    src: url("./fonts/Nunito-Regular.ttf") format("opentype")
+    font-family: "roboto-mono-regular";
+    src: url("./fonts/RobotoMono-Regular.ttf") format("opentype")
 }
 
 * {
@@ -43,29 +43,27 @@ html, body {
 
 body {
     overflow-x: hidden;
-    line-height: 1;
-    font-family: "nunito-regular", Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    font-family: "roboto-mono-regular", Arial, Helvetica, sans-serif;
     color: #f3f3f3;
     background-color: #1b1b1b;
-    background-image: linear-gradient(130deg, #1b1b1b 1%, #0f0f0f 50%);
 }
 
 .map-wrapper {
     position: relative;
     margin: 2em auto;
     min-height: 30em;
-    background: none;
+    background: transparent;
 }
 
 section {
     text-align: center;
     font-size: 1em;
-    margin: 1em;
+    margin: 1em 0;
     border-radius: .5em;
     text-decoration: none;
     display: block;
-    background-color: #8151b8;
-    background-image: linear-gradient(150deg, #4f6ac2 1%,#8151b8 50%);
+    background-color: #8cffd9;
     border-style: none;
     padding: 3% 0;
 }
@@ -108,19 +106,29 @@ h1 {
     font-size: 300%;
 }
 
+h2 {
+    margin: .5em;
+    text-align: center;
+}
+
+h3 {
+    margin: .5em;
+    text-align: center;
+}
+
 p {
     margin-bottom: 1em;
 }
 
 label {
     display: block;
-    padding-right: .5em;
+    /* padding-right: .5em; */
 }
 
 input {
     display: block;
     background-color: #f4f4f4;
-    color: #430091;
+    color: #1b1b1b;
     font-size: .7em;
     font-weight: 800;
     min-width: 30px;
@@ -136,43 +144,63 @@ a {
     border-radius: .2em;
     text-decoration: none;
     display: block;
-    color: #f4f4f4;
-    background-color: #3454be;
-    background-image: linear-gradient(150deg, #3454be 1%, #430091 50%);
+    color: #1b1b1b;
+    background-color: #8AE1E1;
     border-style: none;
     padding: 7% 10%;
+    transition: background-color .35s ease;
 }
 
 a:focus, 
 a:hover {
-    color: #f4f4f4;
-    background-color: #790091;
-    background-image: linear-gradient(150deg, #be4934 1%, #790091 50%);
+    color: #1b1b1b;
+    background-color: #5EC1D9;
 }
 
 button:focus, 
 button:hover {
-    color: #f4f4f4;
-    background-color: #790091;
-    background-image: linear-gradient(150deg, #be4934 1%, #790091 50%);
+    color: #1b1b1b;
+    background-color: #5EC1D9;
 }
 
-input:focus,
-input:hover {
-    border: 2px;
-    border-style: solid;
-    border-color: #be4934;
-}
-
-form {
+/* form {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     font-size: 150%;
     border-radius: .2em;
     border-style: none;
     padding: 5% 5%;
+} */
+
+
+.form-location {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 150%;
+    border-radius: .2em;
+    border-style: none;
+    padding: 5% 5%;
+    /* display: block;
+    min-width: 30px;
+    border-radius: .2em; */
+    background-color: #474747;
+    /* border-style: none;
+    padding: .65em;
+    margin: 0 .5em; */
+}
+
+.form-location label {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .transport {
@@ -183,32 +211,30 @@ form {
 }
 
 .transport button {
-    position: absolute;
     width: 100%;
     height: 100%;
-    font-size: 150%;
-    background-color: #3454be;
-    background-image: linear-gradient(150deg, #3454be 1%, #430091 50%);
+    font-size: 200%;
+    background-color: #8AE1E1;
     padding: 7% 0;
+    transition: background-color .35s ease;
 }
 
 .transport button:focus,
 .transport button:hover {
-    color: #f4f4f4;
-    background-color: #790091;
-    background-image: linear-gradient(150deg, #be4934 1%, #790091 50%)
+    color: #1b1b1b;
+    background-color: #5EC1D9;
 }
 
 button {
     display: block;
     min-width: 30px;
     border-radius: .2em;
-    color: #f4f4f4;
-    background-color: #95cfff;
-    background-image: linear-gradient(150deg, #95cfff 1%, #cea4ff 50%);
+    color: #1b1b1b;
+    background-color: #8AE1E1;
     border-style: none;
     padding: .65em;
     margin: 0 .5em;
+    transition: background-color .35s ease;
 }
 
 @supports (display: flex) {
@@ -232,19 +258,66 @@ ul {
 
 .directions a {
     text-align: center;
-    font-size: 1em;
-    margin: 1em;
+    font-size: 150%;
+    margin: 1em 0;
     border-radius: .5em;
     text-decoration: none;
+    color: #1b1b1b;
     display: block;
-    background-color: #3454be;
-    background-image: linear-gradient(150deg, #3454be 1%, #430091 50%);
+    background-color: #8AE1E1;
     padding: 3% 0;
+    transition: background-color .35s ease;
 }
 
 .directions a:focus, 
 .directions a:hover {
-    color: #f4f4f4;
-    background-color: #790091;
-    background-image: linear-gradient(150deg, #be4934 1%, #790091 50%);
+    color: #1b1b1b;
+    background-color: #5EC1D9;
 }
+
+.directions input {
+    opacity: 0;
+}
+
+.direction-items {
+    text-align: center;
+    font-size: 175%;
+    border-radius: .2em;
+    text-decoration: none;
+    display: block;
+    color: #1b1b1b;
+    background-color: #bfffea;
+    border-style: none;
+    padding: 7% 10%;
+    cursor: pointer;
+    transition: background-color .35s ease;
+}
+
+.directions input:checked + .direction-items {
+    background-color: #ff7856;
+}
+
+/* .direction input {
+    margin: 1.5em 0;
+    padding: 1em;
+    border: none;
+    background-color: #ffffff;
+    border-radius: .5em;
+    min-width: 70%;
+} */
+
+/* .directions ul {
+    width: 50%;
+    padding: 2em;
+    border: 1px solid transparent;
+} */
+
+/* .location-form {
+    display: block;
+    min-width: 30px;
+    border-radius: .2em;
+    background-color: #757575;
+    border-style: none;
+    padding: .65em;
+    margin: 0 .5em;
+} */

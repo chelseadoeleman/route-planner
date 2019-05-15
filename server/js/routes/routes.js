@@ -5,20 +5,11 @@ const fs = require('fs')
 const fetch = require('node-fetch')
 const promisify = util.promisify
 const readFile = promisify(fs.readFile)
-const walkingFilePath = path.join(__dirname, '../../../walking.json')
-const carFilePath = path.join(__dirname, '../../../car.json')
 
 const state = {
     homeCoordinates: {
         lng: 4.605329,
         lat: 52.270131,
-    },
-    currentLocation: {
-        name: 'Home',
-        geometry: {
-            lng: 4.605329,
-            lat: 52.270131,
-        },
     },
     destination: {
         name: 'Device lab',
@@ -51,79 +42,61 @@ const handleTransportRoute = (request, response) => {
 }
 
 const handleGoRoute = async (request, response) => {
-    const { transportType } = request.query
-    const { maneuver, distance } = request.params
-
-    if (transportType === 'car') {
-        
-        const data = await readFile(carFilePath)
-        const json = await JSON.parse(data)
-
-        response.status(200).render('../views/pages/go.ejs', {
-            json,
-            maneuver,
-            distance,
-            nextRoute: `/finish?transportType=${transportType}`,
-        })
-    } else {
-        const data = await readFile(walkingFilePath)
-        const json = await JSON.parse(data)
-        response.status(200).render('../views/pages/go.ejs', {
-            json,
-            nextRoute: `/finish?transportType=${transportType}`,
-        })
-    }
-}
-
-
-const handleFinishRoute = async (request, response) => {
-    const { transportType } =  request.query
+    const { transportType, lat, lng } = request.query
     
-    if (transportType === 'car') {
-        const data = await readFile(carFilePath)
-        const json = await JSON.parse(data)
-        response.status(200).render('../views/pages/finish.ejs', {
-            json
-        })
-    } else {
-        const data = await readFile(walkingFilePath)
-        const json = await JSON.parse(data)
-        response.status(200).render('../views/pages/finish.ejs', {
-            json
-        })
-    }
-}
-
-const transport = async (request, response) => {
-    const { transportType } = request.params
-    const { name, lat, lng } = request.query
-
-    if (transportType === 'car' || transportType === 'walking') {
-        const mapboxDynamicKey = transportType === 'car'
+    const mapboxDynamicKey = transportType === 'car'
         ? 'driving'
         : 'walking'
         const routingUrl = `https://api.mapbox.com/directions/v5/mapbox/${mapboxDynamicKey}/`
-        const geometry = state.currentLocation.geometry
-        const from = `${geometry.lng},${geometry.lat}`
+        const from = `${lng},${lat}`
         const destination = `;${state.destination.geometry.lng},${state.destination.geometry.lat}`
         const key = `.json?access_token=pk.eyJ1IjoiY2hlbHNlYWRvZWxlbWFuIiwiYSI6ImNqdGswc3d5MTBya3U0M24wMTN3d3gxcHMifQ.ZfqXEPDV8XcCEkNfI8v0ug`
         const url = `${routingUrl}${from}${destination}${key}&overview=full&steps=true&geometries=geojson`
 
         const res = await fetch(url)
         const data = await res.json()
-        // var data = JSON.parse(response)
         try {
             const route = data && data.routes && data.routes[0] && data.routes[0].geometry && data.routes[0].geometry.coordinates
             const steps = data && data.routes && data.routes[0] && data.routes[0].legs &&data.routes[0].legs[0] &&data.routes[0].legs[0].steps
-            steps.forEach(step => {
-            const maneuver = step && step.maneuver && step.maneuver.instruction
-            const distance = step && step.distance
-            console.log(maneuver)
-            console.log(distance)
-        })
+            
+            // console.log(route)
+            // return steps
+            // console.log(steps)
+            // steps.forEach(step => {
+            //     const maneuver = step && step.maneuver && step.maneuver.instruction
+            //     const distance = step && step.distance
+            //     console.log(maneuver)
+            //     console.log(distance)
+            // })
+
+            if (transportType === 'car') {
+        
+                response.status(200).render('../views/pages/go.ejs', {
+                    steps,
+                    // nextRoute: `/finish?transportType=${transportType}`,
+                })
+            } else {
+                response.status(200).render('../views/pages/go.ejs', {
+                    steps,
+                    // nextRoute: `/finish?transportType=${transportType}`,
+                })
+            }
         } catch (error) {
             throw new Error(error)
         }
+}
+
+
+// const handleFinishRoute = async (request, response) => {
+//     response.status(200).render('../views/pages/finish.ejs')
+// }
+
+const transport = async (request, response) => {
+    const { transportType } = request.params
+    const { name, lat, lng } = request.query
+    console.log(lat, lng)
+
+    if (transportType === 'car' || transportType === 'walking') {
         // console.dir(data, {showHidden: false, depth: null})
         response.status(304).redirect(`/go/?transportType=${transportType}&name=${name}&lat=${lat}&lng=${lng}`)
     } else {
@@ -139,9 +112,6 @@ const setLocation = async (request, response) => {
     const data = await res.json()
     const geometry = data && data.results && data.results[0] && data.results[0].geometry
 
-    state.currentLocation.name = location.toLowerCase()
-    state.currentLocation.geometry = geometry
-
     if(geometry) {
         response.status(304).redirect(`/transport?name=${location.toLowerCase()}&lat=${geometry.lat}&lng=${geometry.lng}`)
     } else {
@@ -154,6 +124,5 @@ module.exports = {
     handleIndexRoute,
     handleTransportRoute,
     handleGoRoute,
-    handleFinishRoute,
     transport
 }

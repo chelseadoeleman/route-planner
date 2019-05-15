@@ -8,7 +8,6 @@ const {
     handleIndexRoute, 
     handleTransportRoute,
     handleGoRoute,
-    handleFinishRoute,
     transport,
     setLocation
 } = require('./routes/routes')
@@ -24,7 +23,7 @@ app.set('views', `${__dirname}/views`)
 app.get('/', handleIndexRoute)
 app.get('/transport', handleTransportRoute)
 app.get('/go', handleGoRoute)
-app.get('/finish', handleFinishRoute)
+// app.get('/finish', handleFinishRoute)
 
 app.post('/start/:transportType', transport)
 app.post('/setLocation', setLocation)
