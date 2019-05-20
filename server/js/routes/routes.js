@@ -115,6 +115,7 @@ const setLocation = async (request, response) => {
     if(geometry) {
         response.status(304).redirect(`/transport?name=${location.toLowerCase()}&lat=${geometry.lat}&lng=${geometry.lng}`)
     } else {
+        console.log('please enter a legit location')
         response.status(409).redirect('/')
     }
 }
