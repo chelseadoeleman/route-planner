@@ -89,19 +89,6 @@ main {
     max-width: 75%;
 }
 
-main.Center {
-    margin: initial;
-    min-width: initial;
-    max-width: initial;
-    min-height: 100vh;
-    max-height: 100vh;
-    overflow-y: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
 .Center__wrap {
     margin: 0 auto;
     min-width: 60%;
@@ -184,36 +171,6 @@ button:hover {
     background-color: #5EC1D9;
 }
 
-
-.form-location {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: 150%;
-    border-radius: .2em;
-    border-style: none;
-    padding: 5% 5%;
-    /* display: block;
-    min-width: 30px;
-    border-radius: .2em; */
-    background-color: #474747;
-    margin: 0 auto;
-    margin-bottom: 1em;
-    /* border-style: none;
-    padding: .65em;
-    margin: 0 .5em; */
-}
-
-.form-location label {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
 .transport {
     position: relative;
     border-radius: .2em;
@@ -265,6 +222,56 @@ button {
         justify-content: center;
         flex-wrap: wrap;
     }
+
+    main.Center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-location {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-location label {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.form-location {
+    font-size: 150%;
+    border-radius: .2em;
+    border-style: none;
+    padding: 5% 5%;
+    /* display: block;
+    min-width: 30px;
+    border-radius: .2em; */
+    background-color: #474747;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    /* border-style: none;
+    padding: .65em;
+    margin: 0 .5em; */
+}
+
+main.Center {
+    margin: initial;
+    min-width: initial;
+    max-width: initial;
+    min-height: 100%;
+    min-height: 100vh;
+    max-height: 100%;
+    max-height: 100vh;
+    overflow-y: auto;
+    flex-direction: column;
 }
 
 ul {

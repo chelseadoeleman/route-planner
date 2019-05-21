@@ -14,7 +14,7 @@ if(canMakeUseOfJavaScript()) {
 		var main = document.getElementsByTagName('main')[0]
 		if(main){
 			var heading = document.createElement('h1')
-			heading.innerText = 'Sorry this location could not be found'
+			heading.innerText = 'Sorry there is no route available from this location'
 			var home = document.createElement('a')
 			home.setAttribute('href', '/')
 			home.innerText = 'Return to home'

@@ -13,6 +13,7 @@
 * **[Walktrough the application](#walk-trough-the-application)**
 * **[Accessability](#accessability)**
 * **[Feature detection](#accessability)**
+* **[Supplement for retake](#supplement-for-retake)**
 * **[Resources](#resources)**
 * **[Credits](#credits)**
 * **[License](#license)**
@@ -192,6 +193,29 @@ I also tested my application in the Device Lab and everywhere it seemed to work.
 
 ![Device Lab](./docs/devicelab1.JPG)
 ![Device Lab 2](./docs/devicelab2.JPG)
+
+## Supplement for retake
+
+The main difference in this new application besides the styling is that the directions are server side rendered, so the user can always go from a certain location to the device lab. As was before the user could only go from **my home** in every sense of the word. I hard programmed the route from my home to the device lab. This was obviously bad practise. 
+Now the user can go from their **own home** or any location for that matter even when Javascript is turned off. 
+
+An extra feature is that the user is able to view their route on a map. At first I disabled all javascript features like geolocation and the mapbox feature toghether, but now I seperated them. So when the user isn't able to use geolocation they can still fill in their location and view the map with the directions.
+
+Ofcourse you can seperate all the features in the feature detection, but in this case wouldn't make any sense because you need all the features to add a certain feature. 
+
+Before when a route could not be found you would get no error message, but now you will be redirected to an error page that will return you to the homepage. I changed up some content and styling, the buttons below that will link you to the steps are deleted, because they didn't just make any sense because they were displayed below. Now the user is able to check off the steps they already completed to keep track of them. In an ideal situation the user will get to choose to view their steps vertically or horizontally, however flexbox is not always supported on legacy devices, so these users will only be able to view their content vertically. The application still partially breaks around Internet Explorer 8, however in 7 the content look fine again, which is weird. The steps (directions) to the device lab can always be rendered.
+
+<details>
+  <summary>Color accessability checker</summary>
+
+![color](./docs/bz.png)
+![color](./docs/lz.png)
+![color](./docs/gp.png)
+![color](./docs/gz.png)
+![color](./docs/oz.png)
+
+</details>
+
 
 ## Resources
 
