@@ -231,8 +231,9 @@ Some styles do break in certain browsers, but I either presented a fallback or i
 ## Resources
 
 **Feature detection**
-* [Can I Use](https://unsplash.com/developers)
-* [Quirksmode](https://caniuse.com/)
+* [Can I Use](https://caniuse.com/)
+* [Do I use css that breaks](http://doiuse.herokuapp.com/)
+* [Quirksmode](https://www.quirksmode.org/)
 * [MDN](https://developer.mozilla.org/en-US/)
 
 **Additional sources**
