@@ -196,6 +196,19 @@ I also tested my application in the Device Lab and everywhere it seemed to work.
 
 ## Supplement for retake
 
+*   **Functional**
+    *   The route needs to be divided in steps to get from a certain location (home?) to the Device lab.
+    *   Offer different transportation options to the user.
+*   **Reliable**
+    *   The user can find the route to the Device lab from a location, no. matter. what.
+    *   API's are not reliable.
+*   **Usable**
+    *   Make sure it's accessable for everyone e.g. focus styles
+    *   Make sure that the core functionality works in almost 'every' browser and only certain styles break.
+*   **Pleasurable**
+    *   Add some crazy styles and transitions in CSS.
+    *   Add Javascript to go all out. Like making sure the user can also plan their route to the Device Lab from their location with geolocation, render a map with a route.
+
 ![App](./docs/appher.png)
 
 The main difference in this new application besides the styling is that the directions are server side rendered, so the user can always go from a certain location to the device lab. As was before the user could only go from **my home** in every sense of the word. I hard programmed the route from my home to the device lab. This was obviously bad practise. 
