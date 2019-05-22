@@ -211,6 +211,11 @@ Before when a route could not be found you would get no error message, but now y
 
 ![App](./docs/checkher.png)
 
+Some styles do break in certain browsers, but I either presented a fallback or it just looks less nice than it would in other browsers, but that's fine nothing really major breaks.
+
+![Css](./docs/css.png)
+![Css](./docs/css2.png)
+
 <details>
   <summary>Color accessability checker</summary>
 
