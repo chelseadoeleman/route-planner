@@ -1,4 +1,4 @@
-if(canMakeUseOfJavaScript() && window.mapboxgl && window.location && window.location.search) {
+if(canMakeUseOfJavaScript() && window.location && window.location.search && mapboxgl) {
 	var hasAmpecent = window.location.search.indexOf('&') > -1
 	var queryParams = hasAmpecent 
 		? window.location.search.split('&')

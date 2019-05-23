@@ -213,7 +213,42 @@ button {
     margin-bottom: 1em;
 }
 
-@supports (display: flex) {
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+main.Center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-location {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-location label {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* @supports (display: flex) {
     form {
         display: flex;
         flex-wrap: wrap;
@@ -248,7 +283,7 @@ button {
         justify-content: center;
         align-items: center;
     }
-}
+} */
 
 .form-location {
     font-size: 150%;
