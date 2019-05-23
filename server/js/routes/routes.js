@@ -1,10 +1,5 @@
 require('dotenv').config()
-const path = require('path')
-const util = require('util')
-const fs = require('fs')
 const fetch = require('node-fetch')
-const promisify = util.promisify
-const readFile = promisify(fs.readFile)
 
 const state = {
     homeCoordinates: {
