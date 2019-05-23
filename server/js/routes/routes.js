@@ -53,43 +53,20 @@ const handleGoRoute = async (request, response) => {
         const key = `.json?access_token=pk.eyJ1IjoiY2hlbHNlYWRvZWxlbWFuIiwiYSI6ImNqdGswc3d5MTBya3U0M24wMTN3d3gxcHMifQ.ZfqXEPDV8XcCEkNfI8v0ug`
         const url = `${routingUrl}${from}${destination}${key}&overview=full&steps=true&geometries=geojson`
 
-        const res = await fetch(url)
-        const data = await res.json()
         try {
-            const route = data && data.routes && data.routes[0] && data.routes[0].geometry && data.routes[0].geometry.coordinates
-            const steps = data && data.routes && data.routes[0] && data.routes[0].legs &&data.routes[0].legs[0] &&data.routes[0].legs[0].steps
-            
-            // console.log(route)
-            // return steps
-            // console.log(steps)
-            // steps.forEach(step => {
-            //     const maneuver = step && step.maneuver && step.maneuver.instruction
-            //     const distance = step && step.distance
-            //     console.log(maneuver)
-            //     console.log(distance)
-            // })
+            const res = await fetch(url)
+            const data = await res.json()
+            const steps = data && data.routes && data.routes[0] && data.routes[0].legs && data.routes[0].legs[0] &&data.routes[0].legs[0].steps
 
-            if (transportType === 'car') {
-        
-                response.status(200).render('../views/pages/go.ejs', {
-                    steps,
-                    // nextRoute: `/finish?transportType=${transportType}`,
-                })
-            } else {
-                response.status(200).render('../views/pages/go.ejs', {
-                    steps,
-                    // nextRoute: `/finish?transportType=${transportType}`,
-                })
-            }
+            response.status(200).render('../views/pages/go.ejs', {
+                lng,
+                steps,
+            })
+
         } catch (error) {
             throw new Error(error)
         }
 }
-
-
-// const handleFinishRoute = async (request, response) => {
-//     response.status(200).render('../views/pages/finish.ejs')
-// }
 
 const transport = async (request, response) => {
     const { transportType } = request.params
@@ -97,7 +74,6 @@ const transport = async (request, response) => {
     console.log(lat, lng)
 
     if (transportType === 'car' || transportType === 'walking') {
-        // console.dir(data, {showHidden: false, depth: null})
         response.status(304).redirect(`/go/?transportType=${transportType}&name=${name}&lat=${lat}&lng=${lng}`)
     } else {
         response.status(404).redirect('/')

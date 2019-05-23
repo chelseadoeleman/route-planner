@@ -6,36 +6,41 @@
 </head>
 <body>
     <main>
-        <% if(steps) { %>
-            <h1>Start the route to the Device Lab!</h1>
-            <section class="map-wrapper">
-                <p class="error-message">
-                    We're sorry to inform you that the map could not be loaded.
-                    Maybe your Javascript is turned off or Mapbox is not supported.
-                </p>
-                <div id="map"></div>
-            </section>
-            <h2>Follow the following steps to the device lab!</h2>
-            <h3>Keep track of the steps by clicking or tapping on the finished ones.</h3>
-            <div class="directions">
-                <% steps.forEach(function (step, i) { %>
-                    <label>
-                        <input type="checkbox" aria-label="step <%= i + 1 %>" href="#<%= i + 1 %>">
-                        <div class="direction-items">
-                            <h2>Step <%= i + 1 %></h2>
-                            <ul class="steps" id="<%= i + 1 %>">
-                                <li><%= step && step.maneuver && step.maneuver.instruction %></li>
-                                <% if (step && Math.floor(step.distance) !== 0) { %>
-                                    <li class="distance"><%=step && Math.floor(step.distance)%> m</li>
-                                <% } else { %>
-                                    <li class="distance">End</li>
-                                <% } %>
-                            </ul>
-                        </div>
-                    </label>
-                <% }) %>
-                <a href="/" class="finish">You found the Device Lab! Good Job! Stop the navigation</a>
-            </div>
+        <%if (lng <= -1.729682844139461 || lng >= 11.959281999610539) { %>
+            <h1>Sorry there is no route available from this location</h1>
+            <a href="/">Return to home</a>
+        <% } else { %>
+            <% if(steps) { %>
+                <h1>Start the route to the Device Lab!</h1>
+                <section class="map-wrapper">
+                    <p class="error-message">
+                        We're sorry to inform you that the map could not be loaded.
+                        Maybe your Javascript is turned off or Mapbox is not supported.
+                    </p>
+                    <div id="map"></div>
+                </section>
+                <h2>Follow the following steps to the device lab!</h2>
+                <h3>Keep track of the steps by clicking or tapping on the finished ones.</h3>
+                <div class="directions">
+                    <% steps.forEach(function (step, i) { %>
+                        <label>
+                            <input type="checkbox" aria-label="step <%= i + 1 %>" href="#<%= i + 1 %>">
+                            <div class="direction-items">
+                                <h2>Step <%= i + 1 %></h2>
+                                <ul class="steps" id="<%= i + 1 %>">
+                                    <li><%= step && step.maneuver && step.maneuver.instruction %></li>
+                                    <% if (step && step.distance && Math.floor(step.distance) !== 0) { %>
+                                        <li class="distance"><%=step && Math.floor(step.distance)%> m</li>
+                                    <% } else { %>
+                                        <li class="distance">End</li>
+                                    <% } %>
+                                </ul>
+                            </div>
+                        </label>
+                    <% }) %>
+                    <a href="/" class="finish">You found the Device Lab! Good Job! Stop the navigation</a>
+                </div>
+            <% } %>
         <% } %>
     </main>
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>

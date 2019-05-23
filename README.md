@@ -196,14 +196,42 @@ I also tested my application in the Device Lab and everywhere it seemed to work.
 
 ## Supplement for retake
 
+<details>
+  <summary>The route planner before</summary>
+
+Home screen
+![Home](./docs/before/home.png)
+
+Now javascript is turned off on the home screen. No splitting between geolocation and other javascript functions (feature detection).
+![Javascript turned off](./docs/before/jsoff.png)
+
+Start the application. A step that doesn't make any sense to the user and is just added bulk.
+![Start](./docs/before/start.png)
+
+Render steps and mapbox with directions api and mapbox through the client instead of server. The user could only configure the route from my house instead of their prefered location.
+![Map](./docs/before/map.png)
+
+Hard coded steps in JSON.
+![JSON steps](./docs/before/json.png)
+
+Links on the bottom of the page that linked to the steps above. Not a great user experience.
+![Links](./docs/before/links.png)
+
+Finish page at the end, also needs to be removed.
+![Stop](./docs/before/stop.png)
+
+</details>
+
 *   **Functional**
     *   The route needs to be divided in steps to get from a certain location (home?) to the Device lab.
     *   Offer different transportation options to the user.
+    *   Content is always available for the user.
 *   **Reliable**
     *   The user can find the route to the Device lab from a location, no. matter. what.
     *   API's are not reliable.
 *   **Usable**
-    *   Make sure it's accessable for everyone e.g. focus styles
+    *   Make sure it's accessable for everyone e.g. focus styles.
+    *   Styling is functional, just creating the look and feel for the application.
     *   Make sure that the core functionality works in almost 'every' browser and only certain styles break.
 *   **Pleasurable**
     *   Add some crazy styles and transitions in CSS.

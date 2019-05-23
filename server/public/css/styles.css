@@ -79,6 +79,10 @@ section {
     transition: opacity 500ms ease-in-out;
 }
 
+.mapboxgl-canvas:focus {
+    border: 2px #ff7856 solid!important;
+}
+
 .mapboxgl-ctrl-attrib-inner, .mapboxgl-ctrl-logo {
     display: none!important;
 }
@@ -346,28 +350,3 @@ ul {
     line-height: 2em;
     max-width: 75%;
 }
-
-/* .direction input {
-    margin: 1.5em 0;
-    padding: 1em;
-    border: none;
-    background-color: #ffffff;
-    border-radius: .5em;
-    min-width: 70%;
-} */
-
-/* .directions ul {
-    width: 50%;
-    padding: 2em;
-    border: 1px solid transparent;
-} */
-
-/* .location-form {
-    display: block;
-    min-width: 30px;
-    border-radius: .2em;
-    background-color: #757575;
-    border-style: none;
-    padding: .65em;
-    margin: 0 .5em;
-} */
